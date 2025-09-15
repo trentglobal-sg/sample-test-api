@@ -9,8 +9,8 @@ const envPath = path.resolve(__dirname, '.env'); // Gets absolute path to .env
 dotenv.config({ path: envPath });
 
 // Load your SSL certificate and key from Let's Encrypt using env variables
-const privateKey = fs.readFileSync(process.env.PRIVATE_KEY_PATH, 'utf8');
-const certificate = fs.readFileSync(process.env.CERTIFICATE_PATH, 'utf8');
+const privateKey = fs.readFileSync(process.env.PRIVATE_KEY, 'utf8');
+const certificate = fs.readFileSync(process.env.CERTIFICATE, 'utf8');
 const credentials = { key: privateKey, cert: certificate };
 
 const app = express();
